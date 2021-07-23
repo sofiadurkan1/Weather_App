@@ -1,8 +1,11 @@
 const submitBtn = document.getElementById('submit-btn');
-submitBtn.addEventListener('click', function(){
-    const inputBtn = document.getElementById('input-btn').value;
+const inputBtn = document.getElementById('input-btn');
 
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputBtn+'&appid=d22b41e1d8a5c6683e536eed748995c2')
+submitBtn.addEventListener('click', function(){
+const inputValue = inputBtn.value;
+const inputValueCap = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValueCap+'&appid=d22b41e1d8a5c6683e536eed748995c2')
     .then(response => response.json())
     .then(data => {
         const cityName = data.name;
@@ -18,3 +21,11 @@ submitBtn.addEventListener('click', function(){
     })
     .catch(res => alert('Please Type Right City Name'))
 });
+
+inputBtn.addEventListener('keyup',function(event){
+    if(event.key === 'Enter') {
+        event.preventDefault();
+        submitBtn.click();
+    }
+
+})

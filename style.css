@@ -1,5 +1,46 @@
+html { 
+    background: url(./images/weather1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 100%;
+    height: auto; 
+  }
+
 .container{
-    margin: 50px auto;
     text-align: center;
+    overflow: hidden;
+    margin-top: 100px;
+
+
+   
 
 }
+
+input{
+
+    width:20%;
+    height:30px; 
+    border-radius: 5px;
+
+}
+#submit-btn{
+    width:12%;
+    height:35px;
+    border-radius: 5px;
+    margin-top: 40px;
+
+
+}
+
+#submit-btn:hover{
+    background-color:rgb(83, 213, 245);
+}
+h3, p{
+    font-family: 'Franklin Gothic Medium';
+    font-style: italic;
+    font-size: 1.3rem;
+
+}
+
